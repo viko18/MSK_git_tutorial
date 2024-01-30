@@ -29,7 +29,7 @@ First we are going to download Git for Windows [here](https://gitforwindows.org/
 
 Once `git` and `git bash`are installed open `git bash` either directly at the end of the installation or open it by using the `windows search`and typing `git bash` and then open the `git bash` app. It should look something like this:
 
-![git bash screenshot](git_bash_screenshot.png){fig-align="left"}
+![git bash screenshot](./images/git_bash_screenshot.png){fig-align="left"}
 
 You can also check that `git` has been properly downloaded by typing `git --version` into the terminal window, as shown in the screenshot. If you are using windows you should get the same output as presented.
 
