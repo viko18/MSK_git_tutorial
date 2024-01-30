@@ -81,7 +81,7 @@ First restart Rstudio and go to *Tools \> Global Options \> Git/SVN* and make su
 
 This should look something like this under `Git executable`:
 
-C:/Users/Sam.Vickery/AppData/Local/Programs/Git/bin/git.exe
+"C:/Users/Sam.Vickery/AppData/Local/Programs/Git/bin/git.exe"
 
 Now we know that RStudio recognizes Git and we can create `projects` using Git and GitHub repositories. This is what we will be doing in the next section.
 
@@ -90,3 +90,21 @@ Now we know that RStudio recognizes Git and we can create `projects` using Git a
 We are first going to create a new project using version control (Git) and then pull the tutorial from Github to your local machine make some changes and push these back to GitHub.
 
 In Rstudio go to *File \> New Project \> Version Control*, then you will need to add the URL for the public GitHub repo I have created for our tutorial: `https://github.com/viko18/MSK_git_tutorial.git` and provide a location you want the new directory to be on your local machine and click create.
+
+Now you have a local version of the repository that we can collaborate on. The work flow for making changes is as follows:
+
+- `pull` repository (repo) from server (GitHub) this will make sure you have the most recent version of the repo.
+
+- Make changes -> Here we will just be making simple changes to the `README.md`.
+
+- Then we need to stage the changes and push them to GitHub, this is done in three steps that are also visualised in a screenshot below.
+
+- **First** Provide a meaningful commit message. this will be attached to your changes and should shortly explain what has been done.
+
+- **Second** Commit the changes. Now Git recognises that changes have been made and has attached the commit message to them.
+
+- **Third** Push changes made locally to the main branch on GitHub.
+
+![Rstudio commit screenshot](./images/Rstudio_comit.png){fig-align="left"}
+
+Now you (Hopefully) better understand how to use Git & GitHub in Rstudio using a simple workflow.
