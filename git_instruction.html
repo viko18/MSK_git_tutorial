@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.340">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Sam Vickery">
+<meta name="dcterms.date" content="2024-01-30">
+
+<title>Git / GitHub Setup Instructions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="git_instruction_files/libs/clipboard/clipboard.min.js"></script>
+<script src="git_instruction_files/libs/quarto-html/quarto.js"></script>
+<script src="git_instruction_files/libs/quarto-html/popper.min.js"></script>
+<script src="git_instruction_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="git_instruction_files/libs/quarto-html/anchor.min.js"></script>
+<link href="git_instruction_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="git_instruction_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="git_instruction_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="git_instruction_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="git_instruction_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#download-install-git" id="toc-download-install-git" class="nav-link active" data-scroll-target="#download-install-git"><span class="header-section-number">1</span> Download &amp; Install Git</a></li>
+  <li><a href="#create-github-account" id="toc-create-github-account" class="nav-link" data-scroll-target="#create-github-account"><span class="header-section-number">2</span> Create GitHub Account</a></li>
+  <li><a href="#check-if-rstudio-can-find-git" id="toc-check-if-rstudio-can-find-git" class="nav-link" data-scroll-target="#check-if-rstudio-can-find-git"><span class="header-section-number">3</span> Check if RStudio can find Git</a></li>
+  <li><a href="#test---my-first-pull-request" id="toc-test---my-first-pull-request" class="nav-link" data-scroll-target="#test---my-first-pull-request"><span class="header-section-number">4</span> TEST - My first pull request</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Git / GitHub Setup Instructions</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Sam Vickery </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 30, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<p>This tutorial will provide instructions on setting up Git &amp; Github and how how to integrate these into R/RStudio to use in a basic workflow. There are 4 steps in this tutorial:</p>
+<ol type="1">
+<li>Download &amp; install Git</li>
+<li>Create GitHub account</li>
+<li>Check if RStudio can find Git</li>
+<li>TEST - My first pull request</li>
+</ol>
+<p>For this tutorial I have greatly simplified the nice free book <a href="https://happygitwithr.com/">Happy Git and GitHub for the UseR</a> explaining how to setup and use Git &amp; GitHub with <code>R</code>. For a more in depth explanation please consult this book.</p>
+<section id="download-install-git" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="download-install-git"><span class="header-section-number">1</span> Download &amp; Install Git</h2>
+<p>To use Git through RStudio you will need to download and install <code>git</code>. As most of our group members have Windows laptops provided by HSG IT department I will provide instructions for this setup. For macOS you will need to consult the previously mentioned <a href="https://happygitwithr.com/">book</a>, but good news for you it is actually a lot easier than using a Windows laptop. If you have any issue we can work through them at our in person tutorial.</p>
+<p>First we are going to download Git for Windows <a href="https://gitforwindows.org/">here</a>. This will install <code>git</code> and <code>git bash</code>, which is a terminal to use git in the command line from windows. Selecting all the default installation instructions should be fine <strong>EXCEPT</strong> to make sure that when asked about <code>Adjusting your PATH environmen</code> make sure to select <code>Git from the command line and also from 3rd-party software</code>.</p>
+<p>Once <code>git</code> and <code>git bash</code>are installed open <code>git bash</code> either directly at the end of the installation or open it by using the <code>windows search</code>and typing <code>git bash</code> and then open the <code>git bash</code> app. It should look something like this:</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="./images/git_bash_screenshot.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">git bash screenshot</figcaption>
+</figure>
+</div>
+<p>You can also check that <code>git</code> has been properly downloaded by typing <code>git --version</code> into the terminal window, as shown in the screenshot. If you are using windows you should get the same output as presented.</p>
+<p>We will be only using the terminal to set up you <code>git</code> credentials. This is done with the following 2 simple commands.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"James Bond"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"007@example.com"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>user.name</code> should be your first and last name, <code>user.email</code> can be either your HSG or personal email. The email address you choose will need to be the same email address for your GitHub account in <strong>Step 2</strong>.</p>
+<p>Now you have configured Git and are ready to create a GitHub account.</p>
+</section>
+<section id="create-github-account" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="create-github-account"><span class="header-section-number">2</span> Create GitHub Account</h2>
+<p>Create a free <a href="https://github.com">GitHub Account</a>. You will need to use the same email address as your <code>git config</code>.</p>
+<p>To interact with the remote Git server, here Github, we need to create access credentials for such a request. This can be done via SSH or HTTPS. For ease of setup we are going to be using HTTPS, which will use a <strong>personal access token (PAT)</strong>. Once you have a GitHub account you can create a PAT by using this <a href="https://github.com/settings/tokens/new">LINK</a>.</p>
+<p>Add a <code>NOTE</code> for what this will be used for. I wrote <code>HSG_git_tutorial</code> that you can also use.</p>
+<p>leave the expiration to 30 days and select the following scopes:</p>
+<ul class="task-list">
+<li><input type="checkbox"><strong>repo</strong></li>
+<li><input type="checkbox"><strong>workflow</strong></li>
+<li><input type="checkbox"><strong>gist</strong></li>
+<li><input type="checkbox"><strong>user</strong></li>
+</ul>
+<p>Then click generate token. This token will only be shown now so copy it into Notepad or another text editor and save it somewhere safe. We will now store this token explicitly so git can use it when accessing GitHub. For this we will use the <code>gitcreds</code> package in <code>R</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then input your token. Now it is saved and you can work with GitHub.</p>
+</section>
+<section id="check-if-rstudio-can-find-git" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="check-if-rstudio-can-find-git"><span class="header-section-number">3</span> Check if RStudio can find Git</h2>
+<p>Now lets check if RStudio can find git and use everything we setup.</p>
+<p>First restart Rstudio and go to <em>Tools &gt; Global Options &gt; Git/SVN</em> and make sure that the box <em>Git executable</em> points to your Git executable.</p>
+<p>This should look something like this under <code>Git executable</code>:</p>
+<p>“C:/Users/Sam.Vickery/AppData/Local/Programs/Git/bin/git.exe”</p>
+<p>Now we know that RStudio recognizes Git and we can create <code>projects</code> using Git and GitHub repositories. This is what we will be doing in the next section.</p>
+</section>
+<section id="test---my-first-pull-request" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="test---my-first-pull-request"><span class="header-section-number">4</span> TEST - My first pull request</h2>
+<p>We are first going to create a new project using version control (Git) and then pull the tutorial from Github to your local machine make some changes and push these back to GitHub.</p>
+<p>In Rstudio go to <em>File &gt; New Project &gt; Version Control</em>, then you will need to add the URL for the public GitHub repo I have created for our tutorial: <code>https://github.com/viko18/MSK_git_tutorial.git</code> and provide a location you want the new directory to be on your local machine and click create.</p>
+<p>Now you have a local version of the repository that we can collaborate on. The work flow for making changes is as follows:</p>
+<ul>
+<li><p><code>pull</code> repository (repo) from server (GitHub) this will make sure you have the most recent version of the repo.</p></li>
+<li><p>Make changes -&gt; Here we will just be making simple changes to the <code>README.md</code>.</p></li>
+<li><p>Then we need to stage the changes and push them to GitHub, this is done in three steps that are also visualised in a screenshot below.</p></li>
+<li><p><strong>First</strong> Provide a meaningful commit message. this will be attached to your changes and should shortly explain what has been done.</p></li>
+<li><p><strong>Second</strong> Commit the changes. Now Git recognises that changes have been made and has attached the commit message to them.</p></li>
+<li><p><strong>Third</strong> Push changes made locally to the main branch on GitHub.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="./images/Rstudio_comit.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Rstudio commit screenshot</figcaption>
+</figure>
+</div>
+<p>Now you (Hopefully) better understand how to use Git &amp; GitHub in Rstudio using a simple workflow.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
