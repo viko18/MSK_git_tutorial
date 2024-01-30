@@ -87,4 +87,6 @@ Now we know that RStudio recognizes Git and we can create `projects` using Git a
 
 ## TEST - My first pull request
 
-**We will work through this in person on Wednesday**
+We are first going to create a new project using version control (Git) and then pull the tutorial from Github to your local machine make some changes and push these back to GitHub.
+
+In Rstudio go to *File \> New Project \> Version Control*, then you will need to add the URL for the public GitHub repo I have created for our tutorial: `https://github.com/viko18/MSK_git_tutorial.git` and provide a location you want the new directory to be on your local machine and click create.
