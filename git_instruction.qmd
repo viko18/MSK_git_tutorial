@@ -108,3 +108,5 @@ Now you have a local version of the repository that we can collaborate on. The w
 ![Rstudio commit screenshot](./images/Rstudio_comit.png){fig-align="left"}
 
 Now you (Hopefully) better understand how to use Git & GitHub in Rstudio using a simple workflow.
+
+We are in the tutorial
